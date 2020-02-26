@@ -1,0 +1,15 @@
+Help message to your admin. Commands here should tally with the ones provided in `commands.txt` for the admin
+For example:
+
+Hello ADMIN
+Use the commands below
+
+*#notify*
+<notify-message>
+```
+#notify
+<Company/Business name> will be carrying out an upgrade between 23:00hrs to 04:00hrs 🧘🏻
+```
+
+#notify - 🗣️ _notify all subscribed clients_
+#help - ℹ _display this help text_

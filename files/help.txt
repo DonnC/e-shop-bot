@@ -1,0 +1,18 @@
+﻿General help message for your users on whatsapp. Add and implement your commands here
+For example:
+
+Hello i am <company-name | bot-name> Bot🤖 on your service. Use these commands so that i can understand you better.
+
+- *feedback* <your-message>
+```
+feedback Keep up the good work 🥳
+```
+- *suggest* <your-suggestion>
+```
+suggest alice in wonderland book
+```
+_______________________________________
+*suggest*   - ✍🏼 _suggest something_
+*feedback*  - ✍🏼 _write to us_
+*developer* - 👨🏻‍💻 _developer profile_
+*help*      - ℹ️ _display message_

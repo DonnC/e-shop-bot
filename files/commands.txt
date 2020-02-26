@@ -1,0 +1,25 @@
+// this is a comment (C|C++ type), the bot wont read these inside its environment, it will also skip blank lines
+// its a simple way for you to trace which commands belongs to which person
+// you must add your own commands here and implement them inside your bot too
+// if u implement a command in src/handler.py | anywhere, which is not in here, it wont be known by the bot
+// and it will pass it
+
+// command to initiate conver with the bot
+start
+
+// utils commands
+feedback
+developer
+suggest
+
+// developer or moderator commands starts with `-`
+-feedback
+-notify
+-subscribed
+-help
+-stats
+
+// admin or agent commands starts with `#`
+#help
+#notify
+#feedback

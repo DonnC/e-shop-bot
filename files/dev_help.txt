@@ -1,0 +1,8 @@
+Can include help message for the developer | moderator, add more commands and implement them too
+Makes the developer to operate the bot via whatsapp too 😎
+
+*-help* - get help
+*-subscribed* - get updated number of sub clients
+*-stats*  - get stats
+*-notify* - notify subscribed clients
+*-feedback*- ✍🏼 get clients feedbacks
