@@ -32,7 +32,7 @@ def perfom_stats(stats_l):
    # remove duplicates
    contacts = len(set(stats_nums))
    commands = len(set(stats_comm))
-   stats_profile = f"Stats at {stats_date}\n\nAll Contacts: {len(stats_nums)}. All Commands: {len(stats_comm)}\nNo duplicates\nContacts: {contacts}. Commands: {commands}"
+   stats_profile = f"All Contacts: {len(stats_nums)}. All Commands: {len(stats_comm)}"
 
    return stats_profile
 
@@ -58,5 +58,5 @@ def botStats():
    if len(res) == 0:
       res = "No stats"
 
-   result = f"ChatBot Statistics\n{res.strip()}"
+   result = f"Bot stats\n{res.strip()}"
    return result

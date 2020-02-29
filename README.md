@@ -10,8 +10,8 @@
 - This whatsapp bot makes use of twilio sandbox for prototyping
 - Needs twilio credentials, login to your twilio console and replace yr keys in [credentials.py](src/credentials.py)
 - Can host on heroku free tier and choose automatic deployment from your github master branch
-- bulksms service can be used depending on use case, one such service is bulksmszw and ther is a library for that at [bulksms zw api library](https://github.com/DonnC)
-- or if its hot-recharge services like `TechZim airtime bot`, can integrate it using the [hot-recharge zw api library](https://github.com/DonnC) *still testing, raise issues and star for updates.
+- bulksms service can be used depending on use case, one such service is bulksmszw and ther is a library for that at [bulksms zw api library](https://github.com/DonnC/BulkSmsZW-Api)
+- or if its hot-recharge services like `TechZim airtime bot`, can integrate it using the [hot-recharge zw api library](https://github.com/DonnC/Hot-Recharge-ZW) *still testing, raise issues and star for updates.
 
 ### Structure
 - `whether this is a good design structure | not, this worked for me` - you can change depending on your project or business model

@@ -35,30 +35,20 @@ moderator_file     = f'bot_log_{_time}_.log'
 
 admin_help         = path.join(FILES_DIR, admin_file)
 help_general       = path.join(FILES_DIR, help_file)
-devlpr_help        = path.join(FILES_DIR, dev_file)
 commands           = path.join(FILES_DIR, command_file)
 suggested          = path.join(DATABASE_DIR, suggested_db)
 feedback           = path.join(DATABASE_DIR, feedback_db)
 subscribed_clients = path.join(DATABASE_DIR, notify_db)
-moderator_log      = path.join(MODR_LOG_DIR, moderator_file)
-prod_f             = path.join(PRO_STATS_DIR, 'prod.log')
 
 if allowLogging:
-   if checkFile(moderator_log):
-      logging.basicConfig(level=logging.DEBUG, filename=moderator_log, format = '%(asctime)s - %(levelname)s - %(message)s')
-
-   else:
-      logging.basicConfig(level=logging.DEBUG, filename=moderator_log, format = '%(asctime)s - %(levelname)s - %(message)s')
+   # FIXME: initiate logging
+   pass
 
 def logStats(number, command, prod_env=False):
    # log bot stats
    number = number.strip('whatsapp:+')
    if prod_env:
       # TODO:: log stats during production
-      pass
-
-   else:
-      # TODO:: log stats during development
       pass
 
 def log(message='', level=0):
@@ -83,7 +73,6 @@ def checkFile(fpath_):
 
 def notifyClients():
    # automatically notify your clients on whatsapp on any notices the admin | moderator provides
-   deleteDupNotify()
    contacts = []
    if checkFile(subscribed_clients):
       with open(subscribed_clients, encoding="utf8", errors='ignore') as clients_db:
@@ -109,7 +98,6 @@ def saveBackNotify(lines_list):
 
 def subscribe(contact):
    # subscribe a client to your notify list
-   deleteDupNotify()
    contact = contact.strip("whatsapp:+")
    if checkFile(subscribed_clients):
       with open(subscribed_clients, 'a+', errors='ignore') as clients_db:
@@ -150,15 +138,6 @@ def helpText():
 
       return help_
 
-def helpDev():
-   # get help text for developer | moderator
-   if checkFile(devlpr_help):
-      print("[INFO] Dev helper found")
-      with open(devlpr_help, encoding="utf8", errors='ignore') as hf:
-         help_dev_ = hf.read()
-
-      return help_dev_
-
 def saveFeedback(body, contact):
    # TODO: Save | log user feedback
    pass
@@ -198,22 +177,8 @@ def getAdress():
    adrress = "<YOUR ADDRESSES IF ANY>"
    return adrress
 
-def deleteDupNotify():
-   if checkFile(subscribed_clients):
-      with open(subscribed_clients, encoding="utf8", errors='ignore') as clients_db:
-      #with open('../databases/notify.txt') as clients_db:
-         db = clients_db.readlines()
-         if len(db) > 0:
-            # remove duplicates
-            db = set(db)
-            nw = list(db)
-            saveBackNotify(nw)
-
 def getModLog():
    # TODO: send log file to moderator
    # TODO: get number of the moder log files
    numLogs = 0
    return numLogs
-
-# --------------------- test -------------------------
-#logStats("whatsapp:+263778060126", "-logs", True)
