@@ -3,6 +3,15 @@
 - original proposal was tailored towards an electronic startup that sells electronic components
 - can be extended or changed to suit any business type with minor or major tweaks
 
+### Demos
+- `On development app`, can still be tested.
+- Click this link to [whatsapp bot](https://wa.me/14155238886?text=join%20had-firm). After that you can type **hie** or **hello** or **start**.
+- Consumer / client side
+![consumer_demo](resource/demos/netro_bot_v0.01_consumer.gif)
+
+- Developer | Moderator side
+![dev_demo](resource/demos/netro_bot_v0.01_dev.gif)
+
 ### Note
 - Well, as much as i try to give out my thoughts to the public, `EXCEPTION HANDLING` is to be done by the interested personnel in this project
 
