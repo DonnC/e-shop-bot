@@ -29,15 +29,12 @@ def perfom_stats(stats_l):
          stats_comm.append(_command.strip())
          stats_requests += 1
 
-   # remove duplicates
-   contacts = len(set(stats_nums))
-   commands = len(set(stats_comm))
    stats_profile = f"All Contacts: {len(stats_nums)}. All Commands: {len(stats_comm)}"
 
    return stats_profile
 
 def botStats():
-   res = ""
+   res   = ""
    count = 0
    if checkDirExist():
       for prodctn_stats_file in listdir(DEV_STATS_DIR):

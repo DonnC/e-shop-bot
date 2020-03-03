@@ -65,7 +65,7 @@ class BotHandler:
             logStats(self.contact, mod_command, True)
 
             if mod_command == '-help':
-               WhatsApp(helpDev(), MODERATOR)
+               WhatsApp("<make dev help function and implement>", MODERATOR)
 
             if mod_command == '-subscribed':
                WhatsApp(f"So far there are {len(notifyClients())} subscribed clients", MODERATOR)
@@ -131,10 +131,12 @@ class BotHandler:
 
          command = command.lower() # just in case
 
+         start_bot_commands = ['start', 'help']          # define bot entry commands as in the command.txt
+
          if command in Command():
             logStats(self.contact, command, True)
 
-            if command == "start":
+            if command in start_bot_commands:
                WhatsApp(helpText(), self.contact)
 
             if command == "feedback":

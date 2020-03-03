@@ -9,3 +9,9 @@ ADMIN_CONTACT = "whatsapp:+2637xxxxxxxx"
 
 # Developer | Moderator contact
 MODERATOR     = "whatsapp:+2637xxxxxxxx"
+
+# if using bulksmsweb and or hot recharge services and other api, keep keys here
+BULKSMSWEB_TOKEN = "<bulksms-token>"
+BULKSMSWEB_NAME  = "<bulksms-username>"
+
+HOTRECHARGE_PWD  = "<hot-recharge-key>"

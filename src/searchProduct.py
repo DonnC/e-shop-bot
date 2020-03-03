@@ -9,12 +9,20 @@
 from os import path
 from csv import reader
 from random import randint
+from .utils import RESOURCES_DIR
 #from elasticsearch import ElasticsearchException
 
 # can be database, doc, excel, pandas DF etc
-_searchable_items = path.join(RESOURCES, 'your-items.csv')     # this is an example of having a csv file containing your items, e.g books / music tracks
+_searchable_items = path.join(RESOURCES_DIR, 'your-items.csv')     # this is an example of having a csv file containing your items, e.g books / music tracks
 
 class Search:
+   '''
+      ElasticSearch global variables, google about it if you are not sure or
+      need more info
+   '''
+   INDEX_DB = "<your-ES-index>"
+   DOCTYPE  = "<your-ES-doctype>"
+
    def __init__(self, es, product=None):
       self.es           = es        # Connect to the elasticsearch server, pass ES object | create it
       self.product      = product   # can be product/item/music-track/books/any item you can search in your collection / inventory
@@ -28,7 +36,7 @@ class Search:
    def readProductList(self):
       # read items in the csv file and get ready to populate in ES index
       line = 0
-      with open(products) as f:
+      with open(_searchable_items) as f:
          CSVreader = reader(f)         # can use DictReader()
          for row in CSVreader:
             if line == 0:  # in case they are just headers
@@ -44,11 +52,11 @@ class Search:
 
    def createIndex(self):
       # delete old and create new index
-      if self.es.indices.exists(index=INDEX_DB):
+      if self.es.indices.exists(index=self.INDEX_DB):
          print("[WARN] Index exists. Deleting..")
-         es.indices.delete(index=INDEX_DB)
+         es.indices.delete(index=self.INDEX_DB)
 
-      self.es.indices.create(index=INDEX_DB)
+      self.es.indices.create(index=self.INDEX_DB)
 
       print("[INFO] New index created!")
 
@@ -72,7 +80,7 @@ class Search:
       }
       '''
 
-      resp = es.index(index=INDEX_DB, doc_type=DOCTYPE, id="random-id", body=body_)
+      resp = es.index(index=self.INDEX_DB, doc_type=self.DOCTYPE, id="random-id", body=body_)
       print("[INFO] ES responce: ", resp)
 
    def searchDB(self):
@@ -85,7 +93,7 @@ class Search:
         }
       }
 
-      res       = self.es.search(index=INDEX_DB, body=body)
+      res       = self.es.search(index=self.INDEX_DB, body=body)
       response  = res.get('hits').get('hits')
       max_score = res.get('hits').get('max_score')  # returns None if not found
 
@@ -99,7 +107,7 @@ class Search:
          return False, f"No results found: {self.product.upper()}"
 
    def checkExist(self):
-      if path.isfile(products):
+      if path.isfile(_searchable_items):
          return True
 
    def quotation(self):

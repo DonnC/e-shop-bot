@@ -4,8 +4,9 @@
 // if u implement a command in src/handler.py | anywhere, which is not in here, it wont be known by the bot
 // and it will pass it
 
-// command to initiate conver with the bot
+// command to initiate conver with the bot - bot entry commands
 start
+help
 
 // utils commands
 feedback
