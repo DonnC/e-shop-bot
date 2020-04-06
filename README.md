@@ -4,7 +4,7 @@
 - can be extended or changed to suit any business type with minor or major tweaks
 
 ### Demos
-- this is not an AI-ML bot, an example of an AI bot with ML can be found [here under ZIMSEC results bot](https://github.com/DonnC)
+- this is not an AI-ML bot, an example of an AI bot with ML can be found [here, ZIMSEC bot](https://github.com/DonnC/zimsec-results-bot)
 - This example bot `On development app`, has many sides, here i show 2, how it works for both a **client** and the **moderator**
 - ..seperately with no problem 😎
 - Click this link to [whatsapp bot](https://wa.me/14155238886?text=join%20had-firm). After that you can type **hie** or **hello** or **start**.
